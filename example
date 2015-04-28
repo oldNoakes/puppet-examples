@@ -1,0 +1,8 @@
+#!/bin/bash
+
+which "puppet" || (echo "Please install puppet" && exit 1)
+test=$1
+
+echo "running $test test"
+
+FACTER_hiera_root_dir=$(pwd)/hiera puppet apply --modulepath ./modules --hiera_config hiera/hiera.yaml manifests/$test.pp

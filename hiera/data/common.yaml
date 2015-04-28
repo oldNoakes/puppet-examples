@@ -1,0 +1,3 @@
+---
+test::hiera::lookup::value: 'This value is overriding the default value from hiera'
+test::hiera::explicit::value: 'This value from hiera is overrideen by the explicit value'

@@ -13,8 +13,14 @@ which bundle | grep ${RVM_GEMSET} >/dev/null || gem install bundler --no-rdoc --
 
 bundle check > /dev/null || bundle install
 
+local_tmp=$(pwd)/local_tmp
+echo "cleaning up local tmp folder: $local_tmp"
+rm -rf $local_tmp
+mkdir -p $local_tmp
+
 test=$1
 
+#TODO:  Test for no test value set and provide example
 echo "running $test test"
 
-FACTER_hiera_root_dir=$(pwd)/hiera bundle exec puppet apply --modulepath ./modules --hiera_config hiera/hiera.yaml manifests/$test.pp
+FACTER_hiera_root_dir=$(pwd)/hiera FACTER_local_tmp=$local_tmp bundle exec puppet apply --modulepath ./modules --hiera_config hiera/hiera.yaml manifests/$test.pp

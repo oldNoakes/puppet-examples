@@ -1,0 +1,5 @@
+Proxy: <%= @proxy %>
+Proxy Options:
+<%- @proxy_options.each do |option_name, option_value| -%>
+  <%= option_name %>: <%= option_value %>
+<%- end -%>

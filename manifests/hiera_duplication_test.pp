@@ -1,0 +1,1 @@
+class { 'test::hiera::duplication': }

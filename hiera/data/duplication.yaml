@@ -1,0 +1,12 @@
+---
+proxy: &common_proxy 'http://localhost:3128'
+proxy_options: &common_proxy_options
+  :proxy_http: true
+  :proxy_https: true
+  :proxy_ftp: true
+
+test::hiera::duplication::proxy: *common_proxy
+test::hiera::duplication::proxy_options:
+  <<: *common_proxy_options
+  :proxy_irc: true
+  :proxy_ftp: false #Overrides from common options

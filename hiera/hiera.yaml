@@ -5,3 +5,4 @@
   :datadir: "%{::hiera_root_dir}/data"
 :hierarchy:
   - common
+  - duplication

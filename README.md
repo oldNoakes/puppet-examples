@@ -15,3 +15,5 @@ Just a bunch of quick and dirty examples I have put together to make sure I unde
   * Explicit value provided by dev
 2. template_test - Just verifying that an undef value only needs to be checked via a single if statement
 3. hiera_duplication_test - Validate how to remove duplicate values using YAML and how to override common defaults if necessary
+4. defaults_test - Validating how to override the type defaults defined and how to unset them altogether using undef
+5. file_replace_test - Confirming that replace call on File type does not replace content but does modify other file attributes

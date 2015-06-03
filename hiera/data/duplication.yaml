@@ -10,3 +10,7 @@ test::hiera::duplication::proxy_options:
   <<: *common_proxy_options
   :proxy_irc: true
   :proxy_ftp: false #Overrides from common options
+
+specific_value: &specific_value 'overriding_specific_value_default'
+test::hiera::duplication::multilevel::common_value: "%{hiera('common_value')}"
+test::hiera::duplication::multilevel::specific_value: "%{hiera('specific_value')}"

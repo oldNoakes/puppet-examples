@@ -1,3 +1,6 @@
 ---
 test::hiera::lookup::value: 'This value is overriding the default value from hiera'
 test::hiera::explicit::value: 'This value from hiera is overrideen by the explicit value'
+
+common_value: &common_value 'common_level_common_value'
+specific_value: &specific_value 'common_level_specific_value'
